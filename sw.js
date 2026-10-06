@@ -1,4 +1,4 @@
-const CACHE_NAME = "sauls-podship-evangelism-v1";
+const CACHE_NAME = "sauls-podship-evangelism-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -8,13 +8,33 @@ const APP_SHELL = [
   "./icon.svg",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
-  "./icons/icon-maskable-512.png"
+  "./icons/icon-maskable-512.png",
+  // Field Library — guides, tools, and their assets.
+  "./library/",
+  "./library/index.html",
+  "./library/library.css",
+  "./library/library.js",
+  "./library/goal-planner.html",
+  "./library/goal-planner.js",
+  "./library/prayer-notes.html",
+  "./library/prayer-notes.js",
+  "./library/biblical-mentoring.html",
+  "./library/communicating-the-gospel.html",
+  "./library/five-myths-about-youth.html",
+  "./library/setting-goals-for-evangelism.html",
+  "./library/key-characteristics-of-gen-z.html",
+  "./library/biblical-stewardship.html",
+  "./library/tools-to-engage-gen-z.html"
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(APP_SHELL))
+      // Each entry is cached on its own so one unavailable file cannot
+      // leave the whole library without an offline copy.
+      .then((cache) => Promise.all(
+        APP_SHELL.map((url) => cache.add(new Request(url, { cache: "reload" })).catch(() => null))
+      ))
       .then(() => self.skipWaiting())
   );
 });
@@ -52,7 +72,12 @@ self.addEventListener("fetch", (event) => {
         const cached = await caches.match(request);
         if (cached) return cached;
         if (request.mode === "navigate") {
-          return (await caches.match("./index.html")) || Response.error();
+          // Send offline visitors to the closest precached page: the field
+          // library if they were in it, otherwise the main guide.
+          const fallback = url.pathname.includes("/library")
+            ? "./library/index.html"
+            : "./index.html";
+          return (await caches.match(fallback)) || (await caches.match("./index.html")) || Response.error();
         }
         return Response.error();
       })
