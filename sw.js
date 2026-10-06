@@ -1,9 +1,10 @@
-const CACHE_NAME = "sauls-podship-evangelism-v2";
+const CACHE_NAME = "sauls-podship-evangelism-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
+  "./i18n.js",
   "./manifest.webmanifest",
   "./icon.svg",
   "./icons/icon-192.png",

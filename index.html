@@ -1,15 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10110f">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f7f4ec">
+  <meta name="color-scheme" content="light">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Evangelism">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="A Scripture-rooted field guide for sharing the good news of Jesus with clarity, courage, and grace. A product of Saul's Podship.">
+  <meta name="description" content="Learn how to share the gospel and talk about Jesus with clarity, courage, humility, and grace. Free Christian evangelism training, conversation starters, FAQs, Scripture, and practical field guides from Saul's Podship.">
+  <meta name="keywords" content="how to share the gospel, how to evangelize, Christian evangelism, evangelism training, gospel conversation starters, sharing faith, discipleship, youth ministry, Gen Z ministry, Christian apologetics, prayer and evangelism, Bible study, Jesus, good news">
+  <meta name="author" content="Saul's Podship">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Evangelism — A field guide by Saul's Podship">
   <meta property="og:description" content="Carry the good news. Share it with grace. A clear, thoughtful guide for talking about Jesus.">
@@ -22,25 +27,67 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="https://www.saulspodship.com/images/hero/last-supper-v2-1920.jpg" fetchpriority="high">
+  <link rel="alternate" hreflang="en" href="https://evangelism.saulspodship.com/">
+  <link rel="alternate" hreflang="ur" href="https://evangelism.saulspodship.com/?lang=ur">
+  <link rel="alternate" hreflang="hi" href="https://evangelism.saulspodship.com/?lang=hi">
+  <link rel="alternate" hreflang="x-default" href="https://evangelism.saulspodship.com/">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./library/library.css">
   <title>Evangelism — A field guide by Saul's Podship</title>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Evangelism — A field guide by Saul's Podship",
-      "url": "https://evangelism.saulspodship.com/",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Any",
-      "description": "A Scripture-rooted field guide for sharing the good news of Jesus with clarity, courage, and grace.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Saul's Podship",
-        "url": "https://www.saulspodship.com/"
-      }
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://evangelism.saulspodship.com/#app",
+          "name": "Evangelism — A field guide by Saul's Podship",
+          "url": "https://evangelism.saulspodship.com/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Any",
+          "inLanguage": ["en", "ur", "hi"],
+          "description": "Free Christian evangelism training with a gospel overview, respectful conversation starters, Scripture, FAQs, prayer tools, and youth discipleship field guides.",
+          "keywords": "Christian evangelism, how to share the gospel, evangelism training, gospel conversation starters, discipleship, youth ministry",
+          "publisher": {"@id": "https://evangelism.saulspodship.com/#organization"},
+          "image": "https://www.saulspodship.com/images/hero/last-supper-v2-1920.jpg",
+          "speakable": {"@type":"SpeakableSpecification","cssSelector":["#hero-title","#questions-title",".faq-answer"]}
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://evangelism.saulspodship.com/#organization",
+          "name": "Saul's Podship",
+          "url": "https://www.saulspodship.com/",
+          "logo": "https://evangelism.saulspodship.com/icons/icon-512.png"
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to share the gospel with grace",
+          "description": "A simple four-movement framework for explaining the Christian gospel clearly and respectfully.",
+          "totalTime": "PT10M",
+          "step": [
+            {"@type": "HowToStep", "name": "Made for life with God", "text": "Begin with the dignity and purpose God gives every person."},
+            {"@type": "HowToStep", "name": "The fracture of sin", "text": "Explain honestly how sin breaks our relationship with God and one another."},
+            {"@type": "HowToStep", "name": "Jesus brings rescue", "text": "Share that Jesus died for our sins and was raised, offering forgiveness and new life."},
+            {"@type": "HowToStep", "name": "Respond with trust", "text": "Invite a response of faith without pressure, trusting God with the outcome."}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://evangelism.saulspodship.com/#faq",
+          "mainEntity": [
+            {"@type":"Question","name":"I'm not religious. Where do I begin?","acceptedAnswer":{"@type":"Answer","text":"Start with Jesus, not labels. Ask what the person is curious about, consider reading a short passage from John's Gospel together, and do not assume what they believe."}},
+            {"@type":"Question","name":"What is evangelism?","acceptedAnswer":{"@type":"Answer","text":"Evangelism is sharing the good news of Jesus with clarity, humility, and love. It is an invitation, not pressure or a sales pitch."}},
+            {"@type":"Question","name":"How do I share the gospel with someone?","acceptedAnswer":{"@type":"Answer","text":"Ask permission, listen first, speak simply about Jesus and the hope you have received, and leave room for questions. Respect their freedom to respond."}},
+            {"@type":"Question","name":"How can I evangelize respectfully?","acceptedAnswer":{"@type":"Answer","text":"Treat people as people rather than projects. Listen generously, represent others fairly, avoid coercion, and speak with gentleness and respect."}},
+            {"@type":"Question","name":"What if I do not know the answer to a faith question?","acceptedAnswer":{"@type":"Answer","text":"It is okay to say you do not know and offer to explore the question together. Humility builds trust and keeps curiosity welcome."}},
+            {"@type":"Question","name":"What if they say no?","acceptedAnswer":{"@type":"Answer","text":"Respect their answer without pressure. Friendship is not a transaction. Continue to show care, and trust that the timing and outcome are not yours to control."}},
+            {"@type":"Question","name":"How do I talk about Jesus with someone of another faith?","acceptedAnswer":{"@type":"Answer","text":"Begin with respect and genuine curiosity. Ask about their story, represent their beliefs fairly, and explain your hope without caricature or coercion."}},
+            {"@type":"Question","name":"How can I evangelize online or with Gen Z?","acceptedAnswer":{"@type":"Answer","text":"Use short, honest stories and real conversation. Ask thoughtful questions, listen across digital spaces, and connect online conversations to embodied friendship, Scripture, prayer, and community."}}
+          ]
+        }
+      ]
     }
   </script>
 </head>
@@ -94,6 +141,14 @@
       </nav>
 
       <div class="header-actions">
+        <div class="site-preferences" aria-label="Site preferences">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><span class="theme-toggle-icon" aria-hidden="true">☼</span><span data-theme-label>Dark mode</span></button>
+          <div class="language-switcher" role="group" aria-label="Choose language">
+            <button type="button" data-language="en" class="is-active" aria-pressed="true">EN</button>
+            <button type="button" data-language="ur" aria-pressed="false">اردو</button>
+            <button type="button" data-language="hi" aria-pressed="false">हिन्दी</button>
+          </div>
+        </div>
         <button class="install-button" id="install-app" type="button" aria-label="Install the Evangelism field guide">
           <svg class="icon" aria-hidden="true"><use href="#icon-plus"/></svg>
           <span>Install app</span>
@@ -157,6 +212,59 @@
       <p class="purpose-note">Listen generously. Speak clearly. Trust God with the outcome.</p>
       <a class="purpose-link" href="#conversation" aria-label="Jump to conversation guide"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
     </div>
+
+    <section class="section visual-section" id="visual-notes" aria-labelledby="visual-title">
+      <div class="container">
+        <div class="section-heading visual-heading">
+          <div>
+            <p class="section-kicker"><span>VISUAL FIELD NOTES</span> <span class="visually-hidden">Christian evangelism graphics</span></p>
+            <h2 id="visual-title">See the story.<br><em>Carry the light.</em></h2>
+          </div>
+          <p class="section-intro">A visual way to remember the practice: receive the good news, make space for a real conversation, and carry hope into everyday places.</p>
+        </div>
+        <div class="visual-grid">
+          <figure class="visual-card reveal-on-scroll">
+            <div class="visual-art visual-art-dawn" role="img" aria-label="A sunrise over an open path, representing new life in Jesus">
+              <span class="orbit orbit-one" aria-hidden="true"></span><span class="orbit orbit-two" aria-hidden="true"></span>
+              <svg viewBox="0 0 360 220" aria-hidden="true" focusable="false">
+                <defs><linearGradient id="dawn-gradient" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#d8b66f"/><stop offset="1" stop-color="#fff2c7"/></linearGradient></defs>
+                <circle class="sun-core" cx="180" cy="102" r="40" fill="url(#dawn-gradient)"/>
+                <path class="sun-ray" d="M180 35v-15M180 184v-15M113 102H98M262 102h-15M132 54l-11-11M228 150l11 11M228 54l11-11M132 150l-11 11"/>
+                <path class="mountain-back" d="M0 177 79 112l45 32 56-54 80 87Z"/>
+                <path class="mountain-front" d="M0 190 91 139l44 29 66-56 93 78Z"/>
+                <path class="path-line" d="M180 220c-3-29 9-46 0-66-9-18-3-34 0-52"/>
+              </svg>
+            </div>
+            <figcaption><span class="visual-index">01</span><div><h3>Receive the good news</h3><p>The gospel begins with God's welcome: dignity, rescue, grace, and a new way of life.</p></div></figcaption>
+          </figure>
+          <figure class="visual-card reveal-on-scroll">
+            <div class="visual-art visual-art-listen" role="img" aria-label="Two people in a gentle conversation, surrounded by listening waves">
+              <span class="signal signal-left" aria-hidden="true"></span><span class="signal signal-right" aria-hidden="true"></span>
+              <svg viewBox="0 0 360 220" aria-hidden="true" focusable="false">
+                <circle cx="123" cy="88" r="27" class="portrait-fill"/><circle cx="237" cy="88" r="27" class="portrait-fill"/>
+                <path d="M74 177c3-39 28-61 49-61s46 22 49 61M188 177c3-39 28-61 49-61s46 22 49 61" class="portrait-line"/>
+                <path d="M151 74h58M180 62v24" class="connection-line"/>
+                <path d="M111 82c7 5 16 5 23 0M226 82c7 5 16 5 23 0" class="portrait-line"/>
+                <path d="M158 152h44" class="connection-line"/>
+              </svg>
+            </div>
+            <figcaption><span class="visual-index">02</span><div><h3>Make room to listen</h3><p>People are not projects. Questions, patience, and mutual respect open honest conversations about Jesus.</p></div></figcaption>
+          </figure>
+          <figure class="visual-card reveal-on-scroll">
+            <div class="visual-art visual-art-send" role="img" aria-label="A glowing compass and connected points, representing sharing faith in everyday life">
+              <span class="pulse-ring" aria-hidden="true"></span>
+              <svg viewBox="0 0 360 220" aria-hidden="true" focusable="false">
+                <circle cx="180" cy="110" r="47" class="compass-ring"/><path d="m180 74 13 36-13 36-13-36Z" class="compass-needle"/>
+                <circle cx="180" cy="110" r="5" class="compass-dot"/>
+                <path d="M180 18v24M180 178v24M88 110h24M248 110h24M115 45l17 17M228 158l17 17M245 45l-17 17M132 158l-17 17" class="compass-ticks"/>
+                <path d="M28 187c48-31 66-37 102-32M230 65c40 4 58 12 91 36" class="route-line"/>
+              </svg>
+            </div>
+            <figcaption><span class="visual-index">03</span><div><h3>Carry hope outward</h3><p>Share your faith in homes, churches, campuses, and digital spaces—with courage shaped by love.</p></div></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
     <section class="section gospel-section" id="gospel" aria-labelledby="gospel-title">
       <div class="container">
@@ -287,8 +395,9 @@
       <div class="container questions-layout">
         <div class="questions-copy">
           <p class="section-kicker"><span>04</span> WHEN QUESTIONS COME</p>
-          <h2 id="questions-title">Let curiosity<br><em>stay welcome.</em></h2>
-          <p class="section-intro">Faith-filled conversations can include honest doubt. You don’t need a perfect response—listen carefully, acknowledge what you don’t know, and explore Scripture together.</p>
+          <h2 id="questions-title">Questions about<br><em>evangelism.</em></h2>
+          <p class="section-intro">Faith-filled conversations can include honest doubt. Find clear, Scripture-rooted answers to common questions about sharing the gospel, Christian evangelism, respectful dialogue, and reaching Gen Z.</p>
+          <div class="answer-callout"><span class="micro-label">SHORT ANSWER</span><p>Christian evangelism is sharing the good news of Jesus with clarity, humility, and love—an invitation, never pressure.</p></div>
           <a class="underlined-link" href="https://www.saulspodship.com/#/theological-archive" target="_blank" rel="noopener noreferrer">Explore the theological archive <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg></a>
         </div>
         <div class="faq-list">
@@ -307,6 +416,22 @@
           <details class="faq-item">
             <summary><span>“How do I talk with someone of another faith?”</span><i aria-hidden="true"></i></summary>
             <div class="faq-answer"><p>Begin with respect. Ask about their story, represent their beliefs fairly, and explain your hope without caricature or coercion. A generous conversation makes room for both people to be heard.</p><a href="https://www.bible.com/bible/111/COL.4.5-6.NIV" target="_blank" rel="noopener noreferrer">Colossians 4:5–6 <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg></a></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>“What is evangelism?”</span><i aria-hidden="true"></i></summary>
+            <div class="faq-answer"><p>Evangelism is sharing the good news of Jesus with clarity, humility, and love. It is an invitation—not pressure, manipulation, or a sales pitch.</p><a href="https://www.bible.com/bible/111/ROM.1.16.NIV" target="_blank" rel="noopener noreferrer">Romans 1:16 <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg></a></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>“How do I share the gospel with someone?”</span><i aria-hidden="true"></i></summary>
+            <div class="faq-answer"><p>Ask permission, listen first, speak simply about Jesus and the hope you have received, then leave room for questions. Respect their freedom to respond.</p><a href="https://www.bible.com/bible/111/COL.4.5-6.NIV" target="_blank" rel="noopener noreferrer">Colossians 4:5–6 <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg></a></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>“How can I evangelize respectfully?”</span><i aria-hidden="true"></i></summary>
+            <div class="faq-answer"><p>Treat people as people rather than projects. Listen generously, represent others fairly, avoid coercion, and speak with gentleness and respect.</p><a href="https://www.bible.com/bible/111/1PE.3.15.NIV" target="_blank" rel="noopener noreferrer">1 Peter 3:15 <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg></a></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>“How can I evangelize online or with Gen Z?”</span><i aria-hidden="true"></i></summary>
+            <div class="faq-answer"><p>Use short, honest stories and real conversation. Ask thoughtful questions, listen across digital spaces, and connect online conversations to friendship, Scripture, prayer, and community.</p><a href="https://www.bible.com/bible/111/COL.4.5-6.NIV" target="_blank" rel="noopener noreferrer">Colossians 4:5–6 <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg></a></div>
           </details>
         </div>
       </div>
@@ -412,6 +537,7 @@
   </footer>
 
   <div class="toast" id="app-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="./i18n.js" defer></script>
   <script src="./app.js" defer></script>
 </body>
 </html>

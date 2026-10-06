@@ -7,7 +7,7 @@
 
   function showToast(message) {
     if (!toast) return;
-    toast.textContent = message;
+    toast.textContent = window.siteTranslate ? window.siteTranslate(message) : message;
     toast.classList.add("is-visible");
     window.clearTimeout(toastTimer);
     toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 4200);

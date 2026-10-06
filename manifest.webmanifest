@@ -6,11 +6,17 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "display_override": ["standalone", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "any",
-  "background_color": "#10110f",
-  "theme_color": "#10110f",
-  "categories": ["education", "lifestyle"],
+  "background_color": "#f8f6f0",
+  "theme_color": "#f8f6f0",
+  "categories": [
+    "education",
+    "lifestyle"
+  ],
   "prefer_related_applications": false,
   "icons": [
     {
@@ -37,34 +43,64 @@
       "name": "The Gospel",
       "short_name": "Gospel",
       "url": "./#gospel",
-      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Conversation Guide",
       "short_name": "Conversations",
       "url": "./#conversation",
-      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Field Library",
       "short_name": "Library",
       "description": "Seven attributed guides on evangelism, mentoring, Gen Z, stewardship, and goal setting",
       "url": "./library/index.html",
-      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Evangelism Goal Planner",
       "short_name": "Goal planner",
       "description": "Plan evangelism goals on this device",
       "url": "./library/goal-planner.html",
-      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Prayer Notes",
       "short_name": "Prayer wall",
       "description": "Keep a private prayer wall for the people you are reaching",
       "url": "./library/prayer-notes.html",
-      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }
