@@ -1,0 +1,1430 @@
+@charset "UTF-8";
+
+/* ============================================================
+   Field Library — layered on top of the site's styles.css tokens.
+   Every selector is scoped with a `lib-` prefix so nothing here
+   can disturb the existing home page.
+   ============================================================ */
+
+.lib-page {
+  padding-bottom: clamp(62px, 8vw, 104px);
+}
+
+/* Footer links back into the library, used on the home page. */
+
+.footer-statement .lib-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 13px 0 0;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer-statement .lib-footer-links a {
+  color: var(--gold-light);
+  transition: color 170ms ease;
+}
+
+.footer-statement .lib-footer-links a:hover {
+  color: var(--paper);
+}
+
+/* ---------- Breadcrumb ---------- */
+
+.lib-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding-top: 26px;
+  color: var(--muted-2);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lib-breadcrumb a {
+  color: var(--muted);
+  transition: color 160ms ease;
+}
+
+.lib-breadcrumb a:hover {
+  color: var(--gold-light);
+}
+
+.lib-breadcrumb span[aria-hidden] {
+  color: rgba(196, 166, 109, 0.5);
+}
+
+/* ---------- Page hero ---------- */
+
+.lib-hero {
+  position: relative;
+  padding: clamp(40px, 6vw, 76px) 0 clamp(38px, 5vw, 62px);
+  border-bottom: 1px solid var(--line);
+}
+
+.lib-hero::before {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 12% 0%, rgba(196, 166, 109, 0.09), transparent 58%);
+  pointer-events: none;
+  content: "";
+}
+
+.lib-hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+  gap: clamp(30px, 5vw, 62px);
+  align-items: end;
+}
+
+.lib-hero h1 {
+  margin: 0;
+  color: #f1ebde;
+  font-family: var(--serif);
+  font-size: clamp(38px, 5.4vw, 66px);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.005em;
+}
+
+.lib-hero h1 em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.lib-lede {
+  max-width: 560px;
+  margin: 20px 0 0;
+  color: #aca79b;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.lib-hero-aside {
+  padding-left: clamp(0px, 2vw, 24px);
+}
+
+.lib-meta-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lib-meta-list li {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.lib-meta-list li:first-child {
+  border-top: 1px solid var(--line-soft);
+}
+
+.lib-meta-list dt,
+.lib-meta-label {
+  color: var(--gold);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.lib-meta-list dd {
+  margin: 0;
+  color: #d8d2c4;
+}
+
+.lib-meta-list a {
+  color: var(--gold-light);
+  border-bottom: 1px solid rgba(196, 166, 109, 0.35);
+}
+
+.lib-meta-list a:hover {
+  border-bottom-color: var(--gold-light);
+}
+
+/* ---------- Sections ---------- */
+
+.lib-section {
+  padding: clamp(50px, 7vw, 84px) 0 0;
+}
+
+.lib-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.62fr);
+  gap: clamp(26px, 4vw, 54px);
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.lib-section-head h2 {
+  margin: 0;
+  color: #f0eadd;
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.9vw, 46px);
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.lib-section-head h2 em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.lib-section-head p {
+  margin: 0;
+  color: #aaa69a;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* ---------- Guide + tool card grids ---------- */
+
+.lib-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line-soft);
+}
+
+.lib-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lib-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  min-height: 254px;
+  padding: 27px 25px 24px;
+  background: #111210;
+  transition: background 200ms ease;
+}
+
+.lib-card:hover {
+  background: #16170f;
+}
+
+.lib-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.lib-card-top .icon {
+  width: 20px;
+  height: 20px;
+  color: rgba(196, 166, 109, 0.75);
+}
+
+.lib-card h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.lib-card h3 a {
+  color: #ece5d7;
+  transition: color 180ms ease;
+}
+
+.lib-card:hover h3 a {
+  color: var(--gold-light);
+}
+
+.lib-card p {
+  margin: 0;
+  color: #9e9a8f;
+  font-size: 12.5px;
+  line-height: 1.8;
+}
+
+.lib-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--muted-2);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lib-card-foot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold-light);
+}
+
+.lib-card-foot a .icon {
+  width: 13px;
+  height: 13px;
+}
+
+.lib-author {
+  color: #c9c3b5;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+.lib-card-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dark), transparent);
+}
+
+/* ---------- Guide body prose ---------- */
+
+.lib-prose {
+  max-width: 760px;
+  color: #c6c1b4;
+  font-size: 14.5px;
+  line-height: 1.9;
+}
+
+.lib-prose > * + * {
+  margin-top: 18px;
+}
+
+.lib-prose h2 {
+  margin: 0;
+  padding-top: 8px;
+  color: #f0eadd;
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.2vw, 34px);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.lib-prose h3 {
+  margin: 0;
+  color: #ece5d7;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.lib-prose h4 {
+  margin: 0;
+  color: var(--gold);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.lib-prose p {
+  margin: 0;
+}
+
+.lib-prose ul,
+.lib-prose ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.lib-prose li + li {
+  margin-top: 8px;
+}
+
+.lib-prose li::marker {
+  color: rgba(196, 166, 109, 0.65);
+}
+
+.lib-prose strong {
+  color: #eee8dc;
+  font-weight: 600;
+}
+
+.lib-prose a {
+  color: var(--gold-light);
+  border-bottom: 1px solid rgba(196, 166, 109, 0.32);
+}
+
+.lib-prose a:hover {
+  border-bottom-color: var(--gold-light);
+}
+
+.lib-prose blockquote {
+  margin: 0;
+  padding: 20px 24px;
+  border-left: 2px solid var(--gold);
+  background: rgba(196, 166, 109, 0.05);
+  color: #e6e0d2;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.lib-prose blockquote cite {
+  display: block;
+  margin-top: 11px;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 8.5px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+/* ---------- Guide section blocks ---------- */
+
+.lib-block {
+  padding: clamp(30px, 4vw, 46px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.lib-block:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.lib-block-head {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.lib-block-num {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(196, 166, 109, 0.4);
+  border-radius: 50%;
+  color: var(--gold-light);
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+.lib-block-head h2 {
+  margin: 0 0 6px;
+  color: #f0eadd;
+  font-family: var(--serif);
+  font-size: clamp(25px, 3vw, 33px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.lib-block-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+/* Two-column layout for guide pages: sticky rail + prose */
+.lib-guide-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 268px;
+  gap: clamp(34px, 5vw, 68px);
+  align-items: start;
+}
+
+.lib-rail {
+  position: sticky;
+  top: 104px;
+  padding: 22px 20px;
+  border: 1px solid var(--line);
+  background: #121310;
+}
+
+.lib-rail h2 {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lib-rail ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: rail;
+}
+
+.lib-rail li {
+  counter-increment: rail;
+  border-top: 1px solid var(--line-soft);
+}
+
+.lib-rail li:first-child {
+  border-top: 0;
+}
+
+.lib-rail a {
+  display: flex;
+  gap: 11px;
+  padding: 10px 0;
+  color: #b6b1a4;
+  font-size: 12px;
+  line-height: 1.5;
+  transition: color 160ms ease;
+}
+
+.lib-rail a::before {
+  color: rgba(196, 166, 109, 0.7);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  content: counter(rail, decimal-leading-zero);
+}
+
+.lib-rail a:hover {
+  color: var(--gold-light);
+}
+
+.lib-rail-note {
+  margin: 16px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--muted-2);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* ---------- Callouts ---------- */
+
+.lib-callout {
+  padding: 22px 24px;
+  border: 1px solid rgba(196, 166, 109, 0.28);
+  background: linear-gradient(150deg, rgba(196, 166, 109, 0.07), transparent 70%);
+}
+
+.lib-callout .micro-label {
+  display: block;
+  margin-bottom: 9px;
+}
+
+.lib-callout p {
+  margin: 0;
+  color: #ded8ca;
+  font-size: 13.5px;
+  line-height: 1.85;
+}
+
+.lib-callout p + p {
+  margin-top: 10px;
+}
+
+.lib-source {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  background: #131410;
+}
+
+.lib-source-copy {
+  min-width: 220px;
+}
+
+.lib-source-copy h3 {
+  margin: 5px 0 0;
+  color: #e9e2d4;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.lib-source-copy p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.7;
+}
+
+/* ---------- Scripture chips ---------- */
+
+.lib-verses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.lib-verse {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  color: var(--paper-dim);
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  transition: border-color 170ms ease, color 170ms ease;
+}
+
+.lib-verse:hover {
+  border-color: rgba(196, 166, 109, 0.55);
+  color: var(--gold-light);
+}
+
+.lib-verse .icon {
+  width: 13px;
+  height: 13px;
+  color: rgba(196, 166, 109, 0.7);
+}
+
+/* ---------- Myth / stage cards ---------- */
+
+.lib-stack {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line-soft);
+}
+
+.lib-stack-item {
+  padding: 25px 26px;
+  background: #111210;
+}
+
+.lib-stack-item > header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 13px;
+}
+
+.lib-stack-item > header span {
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  flex: 0 0 auto;
+}
+
+.lib-stack-item h3 {
+  margin: 0;
+  color: #ece5d7;
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.lib-truth {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.lib-truth > div {
+  padding-top: 15px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.lib-truth h4 {
+  margin: 0 0 9px;
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.lib-truth p,
+.lib-truth ul {
+  margin: 0;
+  color: #a9a498;
+  font-size: 12.5px;
+  line-height: 1.8;
+}
+
+.lib-truth ul {
+  padding-left: 18px;
+}
+
+.lib-truth li + li {
+  margin-top: 6px;
+}
+
+.lib-stage {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.lib-stage-mark {
+  padding-top: 4px;
+  text-align: center;
+}
+
+.lib-stage-mark b {
+  display: block;
+  color: var(--gold-light);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.lib-stage-mark span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted-2);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ---------- Feature / pillar lists ---------- */
+
+.lib-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line-soft);
+}
+
+.lib-pillar {
+  padding: 20px 21px;
+  background: #111210;
+}
+
+.lib-pillar b {
+  display: block;
+  color: #e7e1d3;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.lib-pillar p {
+  margin: 9px 0 0;
+  color: #9d998e;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* ---------- Pager (prev / next guide) ---------- */
+
+.lib-pager {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(38px, 5vw, 62px);
+  border: 1px solid var(--line);
+  background: var(--line-soft);
+}
+
+.lib-pager a {
+  padding: 21px 23px;
+  background: #111210;
+  transition: background 200ms ease;
+}
+
+.lib-pager a:hover {
+  background: #16170f;
+}
+
+.lib-pager span {
+  display: block;
+  color: var(--gold);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.lib-pager b {
+  display: block;
+  margin-top: 8px;
+  color: #ece5d7;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* ============================================================
+   Tools — planner & prayer notes
+   ============================================================ */
+
+.lib-tool-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 288px;
+  gap: clamp(30px, 4vw, 56px);
+  align-items: start;
+}
+
+.lib-panel {
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid var(--line);
+  background: #121310;
+}
+
+.lib-panel + .lib-panel {
+  margin-top: 22px;
+}
+
+.lib-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.lib-panel-head h2 {
+  margin: 6px 0 0;
+  color: #f0eadd;
+  font-family: var(--serif);
+  font-size: clamp(23px, 2.8vw, 29px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.lib-panel-head .icon {
+  width: 22px;
+  height: 22px;
+  color: rgba(196, 166, 109, 0.7);
+}
+
+.lib-field {
+  display: block;
+}
+
+.lib-field + .lib-field,
+.lib-field + .lib-field-row,
+.lib-field-row + .lib-field,
+.lib-field-row + .lib-field-row {
+  margin-top: 16px;
+}
+
+.lib-field > span,
+.lib-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lib-field small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted-2);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.lib-input,
+.lib-textarea,
+.lib-select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--paper);
+  background: rgba(255, 255, 255, 0.014);
+  font-size: 13px;
+  line-height: 1.6;
+  transition: border-color 170ms ease, background 170ms ease;
+}
+
+.lib-textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.lib-select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gold) 50%),
+    linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+  background-position:
+    calc(100% - 19px) calc(50% + 1px),
+    calc(100% - 14px) calc(50% + 1px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.lib-input:focus,
+.lib-textarea:focus,
+.lib-select:focus {
+  outline: none;
+  border-color: rgba(196, 166, 109, 0.62);
+  background: rgba(196, 166, 109, 0.05);
+}
+
+.lib-input::placeholder,
+.lib-textarea::placeholder {
+  color: #6c6c64;
+}
+
+.lib-field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.lib-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 19px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.lib-actions .lib-status {
+  margin-left: auto;
+}
+
+.lib-status {
+  color: var(--gold-light);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+
+.lib-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0;
+  color: var(--muted-2);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.lib-privacy .icon {
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  color: rgba(196, 166, 109, 0.7);
+}
+
+/* Goal rows */
+
+.lib-goal {
+  padding: 19px 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.lib-goal + .lib-goal {
+  margin-top: 14px;
+}
+
+.lib-goal-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.lib-goal-head input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.lib-goal-head h3 {
+  margin: 0;
+  color: #e9e3d5;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.lib-goal-head .lib-goal-scope {
+  margin-left: auto;
+  color: var(--muted-2);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.lib-goal.is-done {
+  border-color: rgba(196, 166, 109, 0.4);
+  background: rgba(196, 166, 109, 0.05);
+}
+
+.lib-goal.is-done .lib-goal-head h3 {
+  color: var(--gold-light);
+}
+
+.lib-goal-example {
+  margin: 11px 0 0;
+  padding-top: 11px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted-2);
+  font-size: 11.5px;
+  line-height: 1.7;
+}
+
+/* Progress meter */
+
+.lib-meter {
+  position: relative;
+  height: 3px;
+  margin-top: 18px;
+  background: rgba(238, 232, 220, 0.09);
+}
+
+.lib-meter i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+  transition: width 260ms ease;
+}
+
+.lib-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 20px;
+  border: 1px solid var(--line);
+  background: var(--line-soft);
+}
+
+.lib-stat {
+  padding: 15px 16px;
+  background: #111210;
+}
+
+.lib-stat b {
+  display: block;
+  color: var(--gold-light);
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.lib-stat span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted-2);
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Prayer notes */
+
+.lib-note-list {
+  display: grid;
+  gap: 1px;
+  margin-top: 6px;
+  border: 1px solid var(--line);
+  background: var(--line-soft);
+}
+
+.lib-note {
+  padding: 19px 21px;
+  background: #111210;
+}
+
+.lib-note.is-answered {
+  background: rgba(196, 166, 109, 0.05);
+}
+
+.lib-note-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+
+.lib-note-top strong {
+  color: #ece5d7;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.lib-note-top .lib-note-when {
+  margin-left: auto;
+  color: var(--muted-2);
+  font-size: 9px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.lib-note p {
+  margin: 0;
+  color: #a9a498;
+  font-size: 12.5px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.lib-note p.lib-note-scripture {
+  margin-top: 11px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line-soft);
+  color: #b8b2a5;
+  font-size: 12.5px;
+}
+
+.lib-note-scripture .micro-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.lib-note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.lib-chip {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lib-chip.is-answered {
+  border-color: rgba(196, 166, 109, 0.5);
+  color: var(--gold-light);
+}
+
+.lib-note-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.lib-note-actions button {
+  padding: 0;
+  border: 0;
+  color: #8b887f;
+  background: transparent;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.lib-note-actions button:hover {
+  color: var(--gold-light);
+}
+
+.lib-empty {
+  padding: 34px 24px;
+  border: 1px dashed var(--line);
+  color: var(--muted-2);
+  font-size: 12.5px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.lib-empty b {
+  display: block;
+  margin-bottom: 7px;
+  color: #d8d2c4;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.lib-filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.lib-filter {
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 170ms ease, border-color 170ms ease, background 170ms ease;
+}
+
+.lib-filter:hover {
+  color: var(--gold-light);
+  border-color: rgba(196, 166, 109, 0.45);
+}
+
+.lib-filter.is-active {
+  border-color: var(--gold-light);
+  color: var(--ink);
+  background: var(--gold-light);
+}
+
+/* Rail lists inside tools */
+
+.lib-rail-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lib-rail-list li {
+  padding: 11px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.lib-rail-list li:first-child {
+  border-top: 0;
+}
+
+.lib-rail-list b {
+  display: block;
+  color: #d9d3c5;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.lib-rail-list span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted-2);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.lib-prayer-text {
+  margin: 0;
+  padding: 19px 21px;
+  border-left: 2px solid var(--gold);
+  background: rgba(196, 166, 109, 0.05);
+  color: #ddd7c9;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 1050px) {
+  .lib-hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.62fr);
+    gap: 34px;
+  }
+
+  .lib-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lib-guide-layout,
+  .lib-tool-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lib-rail {
+    position: static;
+    order: 2;
+  }
+}
+
+@media (max-width: 760px) {
+  .lib-hero-inner,
+  .lib-section-head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 26px;
+  }
+
+  .lib-hero-aside {
+    padding-left: 0;
+  }
+
+  .lib-meta-list li {
+    grid-template-columns: 68px minmax(0, 1fr);
+  }
+
+  .lib-grid,
+  .lib-grid-two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lib-card {
+    min-height: 0;
+    padding: 23px 20px 21px;
+  }
+
+  .lib-block-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .lib-block-num {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .lib-truth,
+  .lib-field-row,
+  .lib-pager {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lib-stage {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .lib-stage-mark {
+    display: flex;
+    align-items: baseline;
+    gap: 11px;
+    text-align: left;
+  }
+
+  .lib-stage-mark span {
+    margin-top: 0;
+  }
+
+  .lib-stat-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lib-actions .lib-status {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .lib-source {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .lib-stat-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lib-note-top {
+    flex-wrap: wrap;
+  }
+
+  .lib-note-top .lib-note-when {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lib-card,
+  .lib-pager a,
+  .lib-meter i {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Print — the field guides should survive on paper
+   ============================================================ */
+
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    color: #14140f;
+    background: #ffffff;
+    font-size: 11pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .lib-rail,
+  .lib-pager,
+  .no-print,
+  .toast {
+    display: none !important;
+  }
+
+  .lib-hero,
+  .lib-block,
+  .lib-panel,
+  .lib-card,
+  .lib-stack-item {
+    border-color: #cccccc;
+    background: #ffffff;
+  }
+
+  .lib-prose,
+  .lib-prose h2,
+  .lib-prose h3,
+  .lib-prose blockquote,
+  .lib-card h3 a {
+    color: #14140f;
+  }
+
+  .lib-section-head h2,
+  .lib-hero h1,
+  .lib-hero h1 em,
+  .lib-block-head h2 {
+    color: #14140f;
+  }
+
+  a {
+    color: #14140f;
+  }
+}

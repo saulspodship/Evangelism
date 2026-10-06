@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10110f">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Prayer Notes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="An on-device prayer wall for evangelism: write one concern at a time for the people you are reaching, attach a verse to pray, and mark the answers as they come. Private, and nothing is uploaded.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prayer Notes — Evangelism Field Library">
+  <meta property="og:description" content="Write one concern at a time, pray it by name, and mark the answers. Kept privately on your device.">
+  <meta property="og:url" content="https://evangelism.saulspodship.com/library/prayer-notes.html">
+  <meta property="og:image" content="https://www.saulspodship.com/images/hero/last-supper-v2-1920.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://evangelism.saulspodship.com/library/prayer-notes.html">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./library.css">
+  <title>Prayer Notes — Evangelism Field Library</title>
+  <script type="application/ld+json">
+    {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Prayer Notes",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "Any",
+          "url": "https://evangelism.saulspodship.com/library/prayer-notes.html",
+          "current": "notes",
+          "isPartOf": {
+                "@type": "CollectionPage",
+                "name": "The Field Library",
+                "url": "https://evangelism.saulspodship.com/library/"
+          },
+          "publisher": {
+                "@type": "Organization",
+                "name": "Saul's Podship",
+                "url": "https://www.saulspodship.com/"
+          }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4.5 12h14M12.5 5.5 19 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="M12 2.8 14.2 9.8 21.2 12l-7 2.2-2.2 7-2.2-7L2.8 12l7-2.2L12 2.8Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.35"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M3.5 5.5c3.1-.9 5.8-.4 8.5 1.5v12c-2.7-1.9-5.4-2.4-8.5-1.5v-12ZM20.5 5.5c-3.1-.9-5.8-.4-8.5 1.5v12c2.7-1.9 5.4-2.4 8.5-1.5v-12Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.35"/></symbol>
+    <symbol id="icon-cross" viewBox="0 0 24 24"><path d="M12 3v18M5 9h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></symbol>
+    <symbol id="icon-people" viewBox="0 0 24 24"><path d="M15.5 20v-1.6a3.6 3.6 0 0 0-3.6-3.6H6.6A3.6 3.6 0 0 0 3 18.4V20M9.25 11.4a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM21 20v-1.6a3.6 3.6 0 0 0-2.7-3.48M15.6 4.62a3.6 3.6 0 0 1 0 6.76" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m15.6 8.4-2.1 5.1-5.1 2.1 2.1-5.1 5.1-2.1Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-megaphone" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l7 4V5L7 9H5a1 1 0 0 0-1 1ZM17 9.5a3.5 3.5 0 0 1 0 5M7 15v5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3.2 19 6v6c0 4.2-2.9 7.2-7 8.8-4.1-1.6-7-4.6-7-8.8V6l7-2.8Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.4"/><path d="m9 12 2.2 2.2L15.4 10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20h16M7.5 20v-6.5M12 20V7M16.5 20v-9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></symbol>
+    <symbol id="icon-tool" viewBox="0 0 24 24"><path d="M14.6 6.2a3.9 3.9 0 0 0 5.2 5.2l-8.3 8.3a2 2 0 0 1-2.8 0l-2-2a2 2 0 0 1 0-2.8l7.9-8.7Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-note" viewBox="0 0 24 24"><path d="M6 3.5h8.5L19 8v12.5H6V3.5Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.4"/><path d="M14 3.7V8h4.3M9 12.5h6M9 16h4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></symbol>
+    <symbol id="icon-hands" viewBox="0 0 24 24"><path d="M12 8.4S10.8 6 8.9 6a2.6 2.6 0 0 0-2.6 2.6c0 3.2 5.7 7 5.7 7s5.7-3.8 5.7-7A2.6 2.6 0 0 0 15.1 6C13.2 6 12 8.4 12 8.4Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.4"/><path d="M4 19.2c2.6-1 5.3-1 8 0 2.7-1 5.4-1 8 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m15.4 15.4 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M15.5 5.5H6a1.5 1.5 0 0 0-1.5 1.5v9.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 4v10.5M7.5 10.5 12 15l4.5-4.5M4.5 19.5h15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></symbol>
+    <symbol id="icon-print" viewBox="0 0 24 24"><path d="M7 8.5V4.5h10v4M7 17.5H5a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2M7 14h10v5.5H7V14Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html#top" aria-label="Saul's Podship Evangelism, back to the main guide">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width=".8"/>
+            <path d="M22 9.5v25M14.5 17h15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M12 30.5c3.2-1.1 6.4-.7 10 1.4 3.6-2.1 6.8-2.5 10-1.4V35c-3.2-1.1-6.4-.7-10 1.4-3.6-2.1-6.8-2.5-10-1.4v-4.5Z" fill="#10110f" stroke="currentColor" stroke-width=".85" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Saul's Podship</strong>
+          <span>Evangelism field library</span>
+        </span>
+      </a>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="./index.html">Field library</a>
+        <a href="./goal-planner.html">Goal planner</a>
+        <a href="./prayer-notes.html" aria-current="page">Prayer notes</a>
+        <a href="../index.html">Full guide</a>
+      </nav>
+      <div class="header-actions">
+        <button class="install-button" id="install-app" type="button" aria-label="Install the Evangelism field guide">
+          <svg class="icon" aria-hidden="true"><use href="#icon-plus"/></svg>
+          <span>Install app</span>
+        </button>
+        <a class="header-parent-link" href="https://www.saulspodship.com/" target="_blank" rel="noopener noreferrer">
+          Visit the Podship <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>
+        </a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <nav class="container lib-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Evangelism</a>
+      <span aria-hidden="true">/</span>
+      <a href="./index.html">Field library</a>
+      <span aria-hidden="true">/</span>
+      <span>Prayer notes</span>
+    </nav>
+
+    <section class="lib-hero" aria-labelledby="page-title">
+      <div class="container lib-hero-inner">
+        <div>
+          <p class="section-kicker"><span>TOOL 02 — PRAYER</span></p>
+          <h1 id="page-title">Keep a prayer wall<br><em>for the people you name.</em></h1>
+          <p class="lib-lede">Write one concern at a time, for one person at a time. Attach a verse if you have one. Mark the answers as they come. It stays on this device, and it grows into a record of God's faithfulness.</p>
+        </div>
+        <div class="lib-hero-aside">
+          <ul class="lib-meta-list">
+            <li><span class="lib-meta-label">Builds on</span><span><a href="./key-characteristics-of-gen-z.html">Key Characteristics of Gen Z</a> and its prayer-wall practice</span></li>
+            <li><span class="lib-meta-label">Storage</span><span>This device only — nothing is uploaded</span></li>
+            <li><span class="lib-meta-label">Works offline</span><span>Yes, once the library has loaded</span></li>
+            <li><span class="lib-meta-label">Sharing</span><span>Copy, download as text, or print</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+      <div class="container lib-section">
+        <div class="lib-tool-grid">
+          <div>
+
+            <section class="lib-panel" aria-labelledby="composer-heading">
+              <div class="lib-panel-head">
+                <div>
+                  <span class="micro-label">THE PRAYER WALL</span>
+                  <h2 id="composer-heading">Write one concern</h2>
+                </div>
+                <svg class="icon" aria-hidden="true"><use href="#icon-note"/></svg>
+              </div>
+              <p class="lib-lede" style="margin-top:0;font-size:13px;">One concern at a time, for one person at a time. Add a verse to pray with if you have one, then let it stay on the wall until it is answered.</p>
+              <form id="note-form" novalidate>
+                <div class="lib-field-row">
+                  <label class="lib-field">
+                    <span>Who is this for?</span>
+                    <input class="lib-input" id="note-name" type="text" name="name" placeholder="A first name is enough" autocomplete="off">
+                  </label>
+                  <label class="lib-field">
+                    <span>Who they are to you</span>
+                    <select class="lib-select" id="note-tag" name="tag">
+                      <option value="family">Family</option>
+                      <option value="friend">Friend</option>
+                      <option value="neighbour">Neighbour</option>
+                      <option value="colleague">Colleague</option>
+                      <option value="gen-z">Gen Z</option>
+                      <option value="community">Community</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </label>
+                </div>
+                <label class="lib-field">
+                  <span>The concern to pray about</span>
+                  <textarea class="lib-textarea" id="note-request" name="request" rows="3" placeholder="What are you asking God for on their behalf?"></textarea>
+                </label>
+                <label class="lib-field">
+                  <span>Verse to pray with <em style="color:var(--muted-2);font-style:normal;text-transform:none;letter-spacing:0;">(optional)</em></span>
+                  <input class="lib-input" id="note-scripture" type="text" name="scripture" placeholder="e.g. Psalm 78:4 or “that they may know the hope…”" autocomplete="off">
+                </label>
+                <div class="lib-actions">
+                  <button class="button button-gold" id="note-submit" type="submit">Add to prayer wall</button>
+                  <button class="text-button" id="note-cancel" type="button" hidden>Cancel edit</button>
+                  <span class="lib-status" id="note-status" role="status" aria-live="polite"></span>
+                </div>
+              </form>
+            </section>
+
+            <section class="lib-panel" aria-labelledby="wall-heading">
+              <div class="lib-panel-head">
+                <div>
+                  <span class="micro-label">ON THE WALL</span>
+                  <h2 id="wall-heading">Your prayer notes</h2>
+                </div>
+                <svg class="icon" aria-hidden="true"><use href="#icon-hands"/></svg>
+              </div>
+
+              <div class="lib-stat-row" style="margin-top:0;margin-bottom:20px;">
+                <div class="lib-stat"><b id="note-stat-total">0</b><span>Notes</span></div>
+                <div class="lib-stat"><b id="note-stat-praying">0</b><span>Still praying</span></div>
+                <div class="lib-stat"><b id="note-stat-answered">0</b><span>Answered</span></div>
+              </div>
+
+              <div class="lib-filter-row" id="note-filters" role="group" aria-label="Filter prayer notes">
+                <button class="lib-filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="lib-filter" type="button" data-filter="praying" aria-pressed="false">Still praying</button>
+                <button class="lib-filter" type="button" data-filter="answered" aria-pressed="false">Answered</button>
+              </div>
+
+              <label class="lib-field">
+                <span>Search your notes</span>
+                <input class="lib-input" id="note-search" type="search" placeholder="Search a name, a need, or a verse" autocomplete="off">
+              </label>
+
+              <div class="lib-note-list" id="note-list" style="margin-top:20px;"></div>
+              <div class="lib-empty" id="note-empty" hidden></div>
+
+              <div class="lib-actions no-print">
+                <button class="button button-outline" id="notes-copy-all" type="button"><svg class="icon" aria-hidden="true"><use href="#icon-copy"/></svg> Copy all</button>
+                <button class="button button-outline" id="notes-download" type="button"><svg class="icon" aria-hidden="true"><use href="#icon-download"/></svg> Download</button>
+                <button class="button button-outline" id="notes-print" type="button"><svg class="icon" aria-hidden="true"><use href="#icon-print"/></svg> Print the wall</button>
+                <button class="text-button" id="notes-clear-all" type="button">Clear the wall</button>
+              </div>
+              <p class="lib-privacy" style="margin-top:16px;"><svg class="icon" aria-hidden="true"><use href="#icon-lock"/></svg> <span>Every note is stored on this device only. Nothing is uploaded, and no one else can see it. Clearing the wall deletes the notes permanently.</span></p>
+            </section>
+          </div>
+
+          <aside class="lib-rail" aria-label="How to use the prayer wall">
+            <h2>How the wall works</h2>
+            <ul class="lib-rail-list">
+              <li><b>One concern at a time</b><span>The handout’s instruction: each person writes a single concern, and the group prays through them all.</span></li>
+              <li><b>Then pray it aloud</b><span>A note that never leaves the screen is a list. Read it back to God.</span></li>
+              <li><b>Mark the answers</b><span>Give thanks when a note is answered. Remembering is part of the praying.</span></li>
+            </ul>
+            <h2 style="margin-top:22px;">Need a starting point?</h2>
+            <div class="lib-note-actions" style="border-top:0;padding-top:0;margin-top:0;gap:10px;">
+              <button type="button" data-prayer-prompt="That the young people in my church would know who they are in Christ." style="text-align:left;">That the young people in my church would know who they are in Christ.</button>
+              <button type="button" data-prayer-prompt="For a friend who is lonely but never says so." style="text-align:left;">For a friend who is lonely but never says so.</button>
+              <button type="button" data-prayer-prompt="For boldness to start one honest conversation this week." style="text-align:left;">For boldness to start one honest conversation this week.</button>
+              <button type="button" data-prayer-prompt="For the leaders who are tired and close to quitting." style="text-align:left;">For the leaders who are tired and close to quitting.</button>
+              <button type="button" data-prayer-prompt="For a family in our community walking through loss." style="text-align:left;">For a family in our community walking through loss.</button>
+            </div>
+            <p class="lib-rail-note">The practice comes from <a href="./key-characteristics-of-gen-z.html">Key Characteristics of Gen Z</a>. Put your goals beside it in the <a href="./goal-planner.html">goal planner</a>.</p>
+            <p class="lib-prayer-text" style="margin-top:16px;">“We will not hide them from their children; we will tell the next generation the praiseworthy deeds of the Lord.”</p>
+          </aside>
+        </div>
+      </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="./index.html" aria-label="Return to the field library">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width=".8"/>
+            <path d="M22 9.5v25M14.5 17h15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M12 30.5c3.2-1.1 6.4-.7 10 1.4 3.6-2.1 6.8-2.5 10-1.4V35c-3.2-1.1-6.4-.7-10 1.4-3.6-2.1-6.8-2.5-10-1.4v-4.5Z" fill="#10110f" stroke="currentColor" stroke-width=".85" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-copy"><strong>Saul's Podship</strong><span>Evangelism field library</span></span>
+      </a>
+      <div class="footer-statement">
+        <p>Evangelism is a product of <a href="https://www.saulspodship.com/" target="_blank" rel="noopener noreferrer">Saul's Podship <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg></a>—a biblical ministry project sharing Scripture-rooted resources worldwide. Field guides are used with attribution to their authors.</p>
+      </div>
+      <a class="footer-top" href="#main">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+    <div class="container footer-bottom"><span>© <span data-year>2026</span> Saul's Podship</span><span>Made to be read, shared, and carried with you.</span><span class="footer-domain">evangelism.saulspodship.com</span></div>
+  </footer>
+
+  <div class="toast" id="app-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="./library.js" defer></script>
+  <script src="./prayer-notes.js" defer></script>
+</body>
+</html>
