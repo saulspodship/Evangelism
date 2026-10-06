@@ -1,10 +1,11 @@
 (() => {
   const toast = document.getElementById("app-toast");
+  const translate = (value) => window.siteTranslate ? window.siteTranslate(value) : value;
   let toastTimer;
 
   function showToast(message) {
     if (!toast) return;
-    toast.textContent = message;
+    toast.textContent = window.siteTranslate ? window.siteTranslate(message) : message;
     toast.classList.add("is-visible");
     window.clearTimeout(toastTimer);
     toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 4200);
@@ -108,14 +109,19 @@
     const topic = starters[activeTopic];
     const item = topic[activeStarter];
     if (!item) return;
-    if (starterCategory) starterCategory.textContent = item.category;
-    if (starterTitle) starterTitle.textContent = item.title;
-    if (starterDescription) starterDescription.textContent = item.description;
-    if (starterPrompt) starterPrompt.textContent = item.prompt;
+    if (starterCategory) starterCategory.textContent = translate(item.category);
+    if (starterTitle) starterTitle.textContent = translate(item.title);
+    if (starterDescription) starterDescription.textContent = translate(item.description);
+    if (starterPrompt) starterPrompt.textContent = translate(item.prompt);
     if (starterCount) {
       starterCount.textContent = `${String(activeStarter + 1).padStart(2, "0")} / ${String(topic.length).padStart(2, "0")}`;
     }
   }
+
+  document.addEventListener("languagechange", () => {
+    renderStarter();
+    updateStoryPreview();
+  });
 
   topicButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -138,6 +144,8 @@
     renderStarter();
   });
 
+  renderStarter();
+
   // The testimony builder works locally in the page; it has no form endpoint or storage.
   const storyInputs = [
     document.getElementById("story-before"),
@@ -156,7 +164,7 @@
   function formatStory(parts) {
     const labels = ["Before", "Turning point", "Today"];
     return parts
-      .map((value, index) => value ? `${labels[index]}: ${value}` : "")
+      .map((value, index) => value ? `${translate(labels[index])}: ${value}` : "")
       .filter(Boolean)
       .join("\n\n");
   }
@@ -195,7 +203,7 @@
   copyButton?.addEventListener("click", async () => {
     const outline = formatStory(getStoryParts());
     if (!outline) {
-      if (copyStatus) copyStatus.textContent = "Add a note before copying.";
+      if (copyStatus) copyStatus.textContent = translate("Add a note before copying.");
       window.setTimeout(() => {
         if (copyStatus) copyStatus.textContent = "";
       }, 3000);
@@ -203,9 +211,9 @@
     }
     try {
       await copyText(outline);
-      if (copyStatus) copyStatus.textContent = "Copied to clipboard.";
+      if (copyStatus) copyStatus.textContent = translate("Copied to clipboard.");
     } catch (error) {
-      if (copyStatus) copyStatus.textContent = "Copy unavailable—select the preview text instead.";
+      if (copyStatus) copyStatus.textContent = translate("Copy unavailable—select the preview text instead.");
     }
     window.setTimeout(() => {
       if (copyStatus) copyStatus.textContent = "";
@@ -215,7 +223,7 @@
   clearButton?.addEventListener("click", () => {
     storyInputs.forEach((input) => { input.value = ""; });
     updateStoryPreview();
-    if (copyStatus) copyStatus.textContent = "Draft cleared.";
+    if (copyStatus) copyStatus.textContent = translate("Draft cleared.");
     storyInputs[0]?.focus();
     window.setTimeout(() => {
       if (copyStatus) copyStatus.textContent = "";
@@ -284,6 +292,22 @@
     installButton?.classList.remove("is-ready");
     showToast("Evangelism has been installed. Carry the guide with you.");
   });
+
+  // Reveal the visual field notes as they enter the viewport. This is deliberately
+  // CSS-first and respects prefers-reduced-motion for accessible motion graphics.
+  const revealItems = document.querySelectorAll(".reveal-on-scroll");
+  if (revealItems.length && "IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
+    revealItems.forEach((item) => revealObserver.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  }
 
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());

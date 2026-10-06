@@ -2209,3 +2209,528 @@ h2 em,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   Light-first visual system, language controls, and motion notes
+   ============================================================ */
+:root {
+  color-scheme: light;
+  --ink: #f8f6f0;
+  --ink-2: #f1ede4;
+  --ink-3: #e8e1d5;
+  --paper: #292a26;
+  --paper-dim: #5d5b53;
+  --muted: #77736a;
+  --muted-2: #908b80;
+  --gold: #9b6e2b;
+  --gold-light: #b17d35;
+  --gold-dark: #866027;
+  --line: rgba(111, 83, 39, 0.21);
+  --line-soft: rgba(67, 62, 51, 0.12);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #10110f;
+  --ink-2: #141511;
+  --ink-3: #1a1b16;
+  --paper: #eee8dc;
+  --paper-dim: #d4ccbd;
+  --muted: #a8a296;
+  --muted-2: #77766d;
+  --gold: #c4a66d;
+  --gold-light: #dfc78f;
+  --gold-dark: #806840;
+  --line: rgba(219, 199, 155, 0.19);
+  --line-soft: rgba(238, 232, 220, 0.09);
+}
+
+.site-preferences {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.theme-toggle,
+.language-switcher button {
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-size: 9px;
+  line-height: 1;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 29px;
+  padding: 6px 8px;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover,
+.theme-toggle[aria-pressed="true"],
+.language-switcher button:hover,
+.language-switcher button.is-active {
+  border-color: rgba(155, 110, 43, 0.52);
+  color: var(--gold-dark);
+  background: rgba(155, 110, 43, 0.09);
+}
+
+.theme-toggle-icon {
+  color: var(--gold);
+  font-size: 15px;
+  line-height: .7;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+}
+
+.language-switcher button {
+  min-width: 28px;
+  min-height: 27px;
+  padding: 5px 6px;
+  border: 0;
+  border-right: 1px solid var(--line-soft);
+  font-size: 9px;
+}
+
+.language-switcher button:last-child {
+  border-right: 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+html:not([data-theme="dark"]) body {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+html:not([data-theme="dark"]) .site-header {
+  border-bottom-color: rgba(79, 70, 55, 0.13);
+  background: rgba(248, 246, 240, 0.92);
+}
+
+html:not([data-theme="dark"]) .primary-nav a,
+html:not([data-theme="dark"]) .header-parent-link {
+  color: #65635c;
+}
+
+html:not([data-theme="dark"]) .primary-nav a:hover,
+html:not([data-theme="dark"]) .header-parent-link:hover {
+  color: var(--gold-dark);
+}
+
+html:not([data-theme="dark"]) .hero {
+  background:
+    radial-gradient(ellipse at 20% 40%, rgba(180, 133, 48, 0.13), transparent 43%),
+    linear-gradient(180deg, #fbfaf6 0%, #f5f1e8 100%);
+}
+
+html:not([data-theme="dark"]) .hero-glow {
+  background: rgba(196, 151, 66, 0.09);
+}
+
+html:not([data-theme="dark"]) .hero::before {
+  background: linear-gradient(transparent, rgba(155, 110, 43, 0.15) 18%, rgba(155, 110, 43, 0.08) 78%, transparent);
+}
+
+html:not([data-theme="dark"]) .hero h1,
+html:not([data-theme="dark"]) .section-heading h2,
+html:not([data-theme="dark"]) .conversation-copy h2,
+html:not([data-theme="dark"]) .story-copy h2,
+html:not([data-theme="dark"]) .questions-copy h2,
+html:not([data-theme="dark"]) .closing-panel h2 {
+  color: #292a26;
+}
+
+html:not([data-theme="dark"]) .hero-lede,
+html:not([data-theme="dark"]) .section-intro,
+html:not([data-theme="dark"]) .purpose-note,
+html:not([data-theme="dark"]) .hero-bottomline p,
+html:not([data-theme="dark"]) .practice-list p,
+html:not([data-theme="dark"]) .gospel-card p,
+html:not([data-theme="dark"]) .faq-answer p,
+html:not([data-theme="dark"]) .closing-panel > p:not(.section-kicker) {
+  color: #65635c;
+}
+
+html:not([data-theme="dark"]) .hero-principles,
+html:not([data-theme="dark"]) .hero-bottomline,
+html:not([data-theme="dark"]) .hero-byline,
+html:not([data-theme="dark"]) .pastoral-note,
+html:not([data-theme="dark"]) .conversation-footnote,
+html:not([data-theme="dark"]) .starter-description,
+html:not([data-theme="dark"]) .starter-hint,
+html:not([data-theme="dark"]) .builder-privacy,
+html:not([data-theme="dark"]) .story-outline p,
+html:not([data-theme="dark"]) .text-button,
+html:not([data-theme="dark"]) .footer-statement p,
+html:not([data-theme="dark"]) .footer-bottom {
+  color: #716d64;
+}
+
+html:not([data-theme="dark"]) .hero-byline a,
+html:not([data-theme="dark"]) .hero-bottomline > a,
+html:not([data-theme="dark"]) .button-quiet,
+html:not([data-theme="dark"]) .starter-tabs button,
+html:not([data-theme="dark"]) .story-outline h3,
+html:not([data-theme="dark"]) .builder-heading h3,
+html:not([data-theme="dark"]) .gospel-card h3,
+html:not([data-theme="dark"]) .summary-copy p,
+html:not([data-theme="dark"]) .starter-content h3,
+html:not([data-theme="dark"]) .faq-item summary,
+html:not([data-theme="dark"]) .closing-scripture {
+  color: #33332e;
+}
+
+html:not([data-theme="dark"]) .purpose-strip,
+html:not([data-theme="dark"]) .gospel-summary,
+html:not([data-theme="dark"]) .story-builder,
+html:not([data-theme="dark"]) .visual-card {
+  background: linear-gradient(105deg, rgba(176, 128, 45, 0.09), rgba(255, 255, 255, 0.72) 54%, transparent);
+}
+
+html:not([data-theme="dark"]) .conversation-section,
+html:not([data-theme="dark"]) .questions-section,
+html:not([data-theme="dark"]) .closing-section {
+  border-color: rgba(100, 78, 42, 0.15);
+  background:
+    radial-gradient(ellipse at 79% 50%, rgba(190, 144, 60, 0.1), transparent 36%),
+    #f1ede4;
+}
+
+html:not([data-theme="dark"]) .starter-card {
+  border-color: rgba(120, 91, 45, 0.25);
+  background:
+    radial-gradient(ellipse at 92% 5%, rgba(196, 166, 109, 0.2), transparent 37%),
+    linear-gradient(140deg, #fffdf8, #f1ecdf);
+  box-shadow: 0 26px 90px rgba(92, 72, 37, 0.12);
+}
+
+html:not([data-theme="dark"]) .starter-content blockquote,
+html:not([data-theme="dark"]) .story-preview {
+  color: #514b40;
+  background: rgba(160, 116, 44, 0.08);
+}
+
+html:not([data-theme="dark"]) .builder-fields textarea {
+  color: #35342f;
+  border-color: rgba(104, 86, 55, 0.22);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+html:not([data-theme="dark"]) .builder-fields textarea:hover,
+html:not([data-theme="dark"]) .builder-fields textarea:focus {
+  border-color: rgba(155, 110, 43, 0.6);
+  background: #fffdf8;
+}
+
+html:not([data-theme="dark"]) .builder-fields textarea::placeholder {
+  color: #9a9489;
+}
+
+html:not([data-theme="dark"]) .gospel-card {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+html:not([data-theme="dark"]) .gospel-card:hover {
+  background: rgba(173, 127, 48, 0.09);
+}
+
+html:not([data-theme="dark"]) .gospel-card-featured {
+  background: linear-gradient(160deg, rgba(196, 166, 109, 0.2), rgba(196, 166, 109, 0.05));
+}
+
+html:not([data-theme="dark"]) .faq-item summary,
+html:not([data-theme="dark"]) .faq-answer p,
+html:not([data-theme="dark"]) .practice-list strong {
+  color: #3e3c35;
+}
+
+html:not([data-theme="dark"]) .closing-panel {
+  border-color: rgba(155, 110, 43, 0.35);
+  background:
+    radial-gradient(ellipse at 50% 14%, rgba(196, 166, 109, 0.2), transparent 50%),
+    linear-gradient(155deg, #fffdf8, #eee8da 75%);
+}
+
+html:not([data-theme="dark"]) .site-footer {
+  border-top-color: rgba(73, 65, 50, 0.12);
+  background: #e9e3d8;
+}
+
+html:not([data-theme="dark"]) .footer-brand .brand-mark svg path:last-child {
+  fill: #e9e3d8;
+}
+
+html:not([data-theme="dark"]) .toast {
+  color: #34332e;
+  border-color: rgba(155, 110, 43, 0.5);
+  background: rgba(255, 253, 248, 0.98);
+  box-shadow: 0 10px 38px rgba(76, 61, 35, 0.2);
+}
+
+/* Visual field notes: compact illustrations with ambient motion instead of
+   decorative stock imagery, so they remain sharp, fast, and meaningful. */
+.visual-section {
+  padding-top: clamp(68px, 9vw, 112px);
+  padding-bottom: clamp(70px, 9vw, 115px);
+  overflow: hidden;
+}
+
+.visual-heading {
+  margin-bottom: 34px;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.visual-card {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.3);
+  opacity: .18;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1), border-color 200ms ease;
+}
+
+.visual-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.visual-card:nth-child(2) { transition-delay: 90ms; }
+.visual-card:nth-child(3) { transition-delay: 180ms; }
+
+.visual-card:hover {
+  border-color: rgba(155, 110, 43, 0.52);
+}
+
+.visual-art {
+  position: relative;
+  min-height: 220px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #25251f;
+}
+
+.visual-art::before {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255, 241, 202, 0.22);
+  content: "";
+  pointer-events: none;
+}
+
+.visual-art svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 220px;
+}
+
+.visual-art-dawn { background: linear-gradient(155deg, #60553c, #b08242 54%, #e5be72); }
+.visual-art-listen { background: radial-gradient(circle at 50% 32%, #eee2bc, #86754b 70%); }
+.visual-art-send { background: radial-gradient(circle at 50% 48%, #d6bd76, #4d533e 72%); }
+
+.visual-art .sun-ray,
+.visual-art .compass-ticks {
+  fill: none;
+  stroke: #fff3ca;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.visual-art .mountain-back { fill: rgba(48, 51, 39, .5); }
+.visual-art .mountain-front { fill: #2e3328; }
+.visual-art .path-line { fill: none; stroke: #f9e4a5; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 5 8; }
+.visual-art .portrait-fill { fill: #3a3d31; stroke: #fff0bd; stroke-width: 2; }
+.visual-art .portrait-line,
+.visual-art .connection-line { fill: none; stroke: #3a3d31; stroke-linecap: round; stroke-width: 3; }
+.visual-art .connection-line { stroke: #fff0bd; stroke-width: 2; stroke-dasharray: 2 7; }
+.visual-art .compass-ring { fill: rgba(35, 50, 38, .44); stroke: #fff0bd; stroke-width: 2; }
+.visual-art .compass-needle { fill: #fff0bd; }
+.visual-art .compass-dot { fill: #304737; }
+.visual-art .route-line { fill: none; stroke: #304737; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 2 8; }
+
+.visual-card figcaption {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 14px;
+  padding: 19px 18px 21px;
+}
+
+.visual-index {
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .15em;
+}
+
+.visual-card h3 {
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.visual-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.orbit,
+.signal,
+.pulse-ring {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  pointer-events: none;
+}
+
+.orbit {
+  top: 28px;
+  left: 50%;
+  width: 138px;
+  height: 138px;
+  border: 1px solid rgba(255, 243, 202, .32);
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(22deg);
+}
+
+.orbit-two { width: 184px; height: 64px; transform: translateX(-50%) rotate(-26deg); }
+
+.signal {
+  top: 36px;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 245, 206, .55);
+  border-radius: 50%;
+  animation: signal-pulse 3.2s ease-out infinite;
+}
+
+.signal-left { left: 29px; }
+.signal-right { right: 29px; animation-delay: 1.5s; }
+
+.pulse-ring {
+  top: 50%;
+  left: 50%;
+  width: 132px;
+  height: 132px;
+  border: 1px solid rgba(255, 245, 206, .5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: compass-pulse 3.4s ease-out infinite;
+}
+
+@keyframes signal-pulse {
+  0%, 100% { opacity: .2; transform: scale(.85); }
+  45% { opacity: .7; transform: scale(1.08); }
+  70% { opacity: 0; transform: scale(1.3); }
+}
+
+@keyframes compass-pulse {
+  0%, 100% { opacity: .2; transform: translate(-50%, -50%) scale(.84); }
+  50% { opacity: .65; transform: translate(-50%, -50%) scale(1.1); }
+  75% { opacity: 0; transform: translate(-50%, -50%) scale(1.34); }
+}
+
+.sun-core { animation: sun-breathe 4.8s ease-in-out infinite; transform-origin: 180px 102px; }
+@keyframes sun-breathe { 0%, 100% { opacity: .86; transform: scale(.96); } 50% { opacity: 1; transform: scale(1.06); } }
+
+html[dir="rtl"] body {
+  font-family: "Noto Sans Arabic", var(--sans);
+}
+
+html[lang="hi"] body {
+  font-family: "Noto Sans Devanagari", var(--sans);
+}
+
+html[dir="rtl"] .art-verse {
+  right: 35px;
+  left: auto;
+  padding-right: 21px;
+  padding-left: 0;
+  border-right: 1px solid var(--gold-light);
+  border-left: 0;
+}
+
+html[dir="rtl"] .conversation-footnote,
+html[dir="rtl"] .pastoral-note {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .faq-answer,
+html[dir="rtl"] .section-intro,
+html[dir="rtl"] .hero-lede {
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .site-preferences { gap: 4px; }
+  .theme-toggle { padding-inline: 6px; }
+  .theme-toggle > span:last-child { display: none; }
+  .language-switcher button { min-width: 24px; padding-inline: 4px; }
+  .visual-grid { grid-template-columns: 1fr; gap: 12px; }
+  .visual-art, .visual-art svg { min-height: 190px; height: 190px; }
+  .visual-card figcaption { padding: 16px; }
+}
+
+@media (max-width: 520px) {
+  .install-button > span { display: none; }
+  .install-button { padding-inline: 9px; }
+  .header-actions { gap: 5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual-card { opacity: 1; transform: none; transition: none; }
+  .signal, .pulse-ring, .sun-core { animation: none; }
+}
+
+.answer-callout {
+  max-width: 430px;
+  margin-top: 25px;
+  padding: 16px 18px;
+  border-left: 2px solid var(--gold);
+  background: rgba(155, 110, 43, 0.08);
+}
+
+.answer-callout p {
+  margin: 6px 0 0;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+html:not([data-theme="dark"]) .answer-callout p {
+  color: #3e3c35;
+}

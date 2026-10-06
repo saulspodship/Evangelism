@@ -36,3 +36,9 @@ python3 -m http.server 4173 --bind 0.0.0.0
 Then visit `http://localhost:4173`. A secure context (localhost or HTTPS) is required for service workers and PWA installation.
 
 See [DEPLOYMENT.md](./DEPLOYMENT.md) for custom-domain setup instructions.
+
+## Experience, discoverability, and languages
+
+The landing guide now opens in a warm light theme, with an optional dark-mode preference. The header includes on-device English, اردو, and हिन्दी toggles; the selected language and theme are remembered locally, Urdu switches the document to RTL, and the same controls are injected into every Field Library page.
+
+The homepage includes an image-led hero, lightweight inline SVG visual field notes with reduced-motion-safe animation, and answer-first FAQ content. Search metadata, canonical/hreflang links, accessible headings, `HowTo`, `FAQPage`, `WebApplication`, and `Organization` structured data cover common discovery questions such as “how to share the gospel,” “what is evangelism,” respectful evangelism, gospel conversation starters, discipleship, youth ministry, and reaching Gen Z.

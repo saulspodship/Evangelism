@@ -1428,3 +1428,99 @@
     color: #14140f;
   }
 }
+
+/* The light theme is the default across the entire field library too. */
+html:not([data-theme="dark"]) .lib-card {
+  background: #fffdf8;
+}
+html:not([data-theme="dark"]) .lib-card:hover {
+  background: #f4eee2;
+}
+html:not([data-theme="dark"]) .lib-hero h1,
+html:not([data-theme="dark"]) .lib-section-head h2,
+html:not([data-theme="dark"]) .lib-card h3,
+html:not([data-theme="dark"]) .lib-card h3 a,
+html:not([data-theme="dark"]) .lib-lede,
+html:not([data-theme="dark"]) .lib-meta-list dd {
+  color: #2f302b;
+}
+html:not([data-theme="dark"]) .lib-lede,
+html:not([data-theme="dark"]) .lib-section-head p,
+html:not([data-theme="dark"]) .lib-card p,
+html:not([data-theme="dark"]) .lib-body p,
+html:not([data-theme="dark"]) .lib-body li {
+  color: #626057;
+}
+html:not([data-theme="dark"]) .lib-hero,
+html:not([data-theme="dark"]) .lib-section {
+  border-color: rgba(92, 76, 46, .16);
+}
+html:not([data-theme="dark"]) .lib-hero::before {
+  background: radial-gradient(ellipse at 12% 0%, rgba(196, 166, 109, .18), transparent 58%);
+}
+html:not([data-theme="dark"]) .lib-breadcrumb,
+html:not([data-theme="dark"]) .lib-meta-list dt,
+html:not([data-theme="dark"]) .lib-meta-label {
+  color: #826029;
+}
+
+html:not([data-theme="dark"]) .lib-prose,
+html:not([data-theme="dark"]) .lib-prose p,
+html:not([data-theme="dark"]) .lib-prose li,
+html:not([data-theme="dark"]) .lib-truth p,
+html:not([data-theme="dark"]) .lib-truth ul,
+html:not([data-theme="dark"]) .lib-goal-example,
+html:not([data-theme="dark"]) .lib-note p,
+html:not([data-theme="dark"]) .lib-note p.lib-note-scripture {
+  color: #5f5c54;
+}
+html:not([data-theme="dark"]) .lib-prose h2,
+html:not([data-theme="dark"]) .lib-prose h3,
+html:not([data-theme="dark"]) .lib-prose strong,
+html:not([data-theme="dark"]) .lib-block-head h2,
+html:not([data-theme="dark"]) .lib-stack-item h3,
+html:not([data-theme="dark"]) .lib-pillar b,
+html:not([data-theme="dark"]) .lib-pager b,
+html:not([data-theme="dark"]) .lib-panel-head h2,
+html:not([data-theme="dark"]) .lib-goal-head h3,
+html:not([data-theme="dark"]) .lib-note-top strong,
+html:not([data-theme="dark"]) .lib-source-copy h3 {
+  color: #34332e;
+}
+html:not([data-theme="dark"]) .lib-rail,
+html:not([data-theme="dark"]) .lib-source,
+html:not([data-theme="dark"]) .lib-stack-item,
+html:not([data-theme="dark"]) .lib-pillar,
+html:not([data-theme="dark"]) .lib-pager a,
+html:not([data-theme="dark"]) .lib-panel,
+html:not([data-theme="dark"]) .lib-goal,
+html:not([data-theme="dark"]) .lib-stat,
+html:not([data-theme="dark"]) .lib-note {
+  background: #fffdf8;
+}
+html:not([data-theme="dark"]) .lib-pager a:hover {
+  background: #f4eee2;
+}
+html:not([data-theme="dark"]) .lib-callout,
+html:not([data-theme="dark"]) .lib-note.is-answered,
+html:not([data-theme="dark"]) .lib-goal.is-done {
+  background: rgba(176, 128, 45, .08);
+}
+html:not([data-theme="dark"]) .lib-rail a,
+html:not([data-theme="dark"]) .lib-callout p,
+html:not([data-theme="dark"]) .lib-source-copy p,
+html:not([data-theme="dark"]) .lib-pillar p,
+html:not([data-theme="dark"]) .lib-note p {
+  color: #69655b;
+}
+html:not([data-theme="dark"]) .lib-input,
+html:not([data-theme="dark"]) .lib-textarea,
+html:not([data-theme="dark"]) .lib-select {
+  color: #34332e;
+  border-color: rgba(104, 86, 55, .22);
+  background-color: #fffdf8;
+}
+html:not([data-theme="dark"]) .lib-input::placeholder,
+html:not([data-theme="dark"]) .lib-textarea::placeholder {
+  color: #9a9489;
+}
