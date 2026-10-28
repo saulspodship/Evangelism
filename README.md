@@ -42,3 +42,38 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for custom-domain setup instructions.
 The landing guide now opens in a warm light theme, with an optional dark-mode preference. The header includes on-device English, اردو, and हिन्दी toggles; the selected language and theme are remembered locally, Urdu switches the document to RTL, and the same controls are injected into every Field Library page.
 
 The homepage includes an image-led hero, lightweight inline SVG visual field notes with reduced-motion-safe animation, and answer-first FAQ content. Search metadata, canonical/hreflang links, accessible headings, `HowTo`, `FAQPage`, `WebApplication`, and `Organization` structured data cover common discovery questions such as “how to share the gospel,” “what is evangelism,” respectful evangelism, gospel conversation starters, discipleship, youth ministry, and reaching Gen Z.
+
+## Podship identity and discovery updates
+
+All 11 public pages share the burgundy/gold/cream product identity, an accessible
+responsive footer, and the explicit linked ownership statement. The homepage's
+`#about` directory includes all six public apps listed by the parent site's
+About page (verified 28 October 2026), not a speculative DNS inventory. Product
+FAQs explain audience, tools, accounts, local storage and offline limitations.
+Existing author attribution, translations, theme controls, local data keys and
+interactive tools remain in place. There were no standalone privacy/terms pages
+or authentication flows in the inspected project; existing inline privacy notes
+are retained. The added FAQ clarifies that external services have their own
+privacy practices.
+
+Every public page has its own canonical and sharing metadata. `robots.txt` points
+to `sitemap.xml`; WebSite, WebPage and publisher data supplement existing article
+and application data. Homepage FAQ schema mirrors visible questions and answers.
+The service-worker cache version has been advanced so existing installations
+refresh the shared design.
+
+### Validation
+
+Run `python3 scripts/validate.py` for standard-library checks of all public pages,
+metadata, ownership, local links, headings, image alt attributes, JSON-LD, the app
+directory and sitemap. Run `node --check` on the JavaScript files for syntax.
+This remains a static site with no build step or package-managed test suite.
+
+Automated browser validation was attempted, but Chromium could not be downloaded
+because the environment blocks its download host. Desktop/mobile rendering,
+interactive regression, RTL layouts and actual offline installation still need
+a browser check. No live deployment, DNS changes, independent sibling-app policy
+checks, search indexing or AI citation behavior are claimed. The parent page
+reader did not expose the parent's footer: this footer adapts its verified brand,
+resource routes and YouTube link, rather than claiming a pixel-exact reproduction
+or inventing additional social or legal links.
