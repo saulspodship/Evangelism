@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://evangelism.saulspodship.com/sitemap.xml

@@ -1,6 +1,6 @@
 {
   "id": ".",
-  "name": "Evangelism — Saul's Podship",
+  "name": "Evangelism \u2014 Saul's Podship",
   "short_name": "Evangelism",
   "description": "A Scripture-rooted field guide for sharing the good news of Jesus with clarity, courage, and grace.",
   "start_url": "./",
@@ -11,8 +11,8 @@
     "minimal-ui"
   ],
   "orientation": "any",
-  "background_color": "#f8f6f0",
-  "theme_color": "#f8f6f0",
+  "background_color": "#FDFBF7",
+  "theme_color": "#4A152C",
   "categories": [
     "education",
     "lifestyle"
