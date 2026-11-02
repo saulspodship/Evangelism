@@ -6,7 +6,7 @@ The site is designed for `https://evangelism.saulspodship.com/` and includes an 
 
 ## The Field Library
 
-`/library/` holds seven attributed field guides built from the training handouts in the shared source folder, each linking back to its original PDF:
+`/library/` holds seven attributed field guides built from the training handouts. The full teaching of each handout is on this site, and each guide names its author and source handout:
 
 | Guide | Author |
 | --- | --- |
@@ -62,11 +62,33 @@ and application data. Homepage FAQ schema mirrors visible questions and answers.
 The service-worker cache version has been advanced so existing installations
 refresh the shared design.
 
+## Canonical URLs, sitemap and share cards (2 November 2026)
+
+- `/library/` is the single canonical URL for the Field Library hub. The
+  `/library/index.html` alias is a permanent 301 to it in `vercel.json`, and no
+  internal link points at that alias. `/` is the single canonical URL for the
+  home page; internal links use `/` and `/library/` rather than filename forms.
+- `sitemap.xml` at the domain root lists the 11 indexable canonical URLs only,
+  with absolute `https://evangelism.saulspodship.com` locations. Redirecting
+  aliases are deliberately excluded. `robots.txt` declares the sitemap.
+- Every page has a self-referencing absolute canonical, a unique title of at
+  most 60 characters, a unique description of 120–155 characters, and a full
+  `og:` / `twitter:` set. `og:image` and `twitter:image` point to the local
+  1200 × 630 `images/og-evangelism.jpg`, so the share image is actually served
+  by this site.
+- The eight Google Drive links (seven handout files and the source folder) were
+  removed: those files return "File not found". Guide articles remain complete
+  web editions, with source attribution kept in each page's hero and source
+  note. No "Original PDF" button or empty PDF call-to-action remains.
+
 ### Validation
 
-Run `python3 scripts/validate.py` for standard-library checks of all public pages,
-metadata, ownership, local links, headings, image alt attributes, JSON-LD, the app
-directory and sitemap. Run `node --check` on the JavaScript files for syntax.
+Run `python3 scripts/validate.py` for standard-library checks of all public pages:
+canonical URLs against the sitemap, title/description lengths and uniqueness, the
+complete Open Graph and Twitter sets, share-image existence and dimensions,
+ownership, local links, headings, image alt attributes, JSON-LD, the app
+directory, robots.txt and the 301 alias rule. Run `node --check` on the
+JavaScript files for syntax.
 This remains a static site with no build step or package-managed test suite.
 
 Automated browser validation was attempted, but Chromium could not be downloaded

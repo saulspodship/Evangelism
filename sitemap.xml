@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://evangelism.saulspodship.com/</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/biblical-mentoring.html</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/biblical-stewardship.html</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/communicating-the-gospel.html</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/five-myths-about-youth.html</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/goal-planner.html</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/key-characteristics-of-gen-z.html</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/prayer-notes.html</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/setting-goals-for-evangelism.html</loc></url>
-  <url><loc>https://evangelism.saulspodship.com/library/tools-to-engage-gen-z.html</loc></url>
+  <!-- One <loc> per indexable canonical URL. /library/ is the canonical hub;
+       https://evangelism.saulspodship.com/library/index.html is a 301 alias
+       (see vercel.json) and is deliberately not listed here. -->
+  <url><loc>https://evangelism.saulspodship.com/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/communicating-the-gospel.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/key-characteristics-of-gen-z.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/goal-planner.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/biblical-mentoring.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/prayer-notes.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/biblical-stewardship.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/setting-goals-for-evangelism.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/five-myths-about-youth.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://evangelism.saulspodship.com/library/tools-to-engage-gen-z.html</loc><lastmod>2026-11-02</lastmod></url>
 </urlset>
