@@ -15,12 +15,15 @@ If this site is meant to ship directly from an Arena branch before a merge, choo
 
 ### Serving the Field Library
 
-`/library/` is a real directory with an `index.html`, so every static host serves it without extra configuration:
+`/library/` is a real directory with an `index.html`, so every static host serves the hub without extra configuration:
 
-- `/library/` and `/library/index.html` both resolve to the library hub.
+- `/library/` is the only canonical hub URL, and the only one listed in `sitemap.xml` or used in internal links.
+- `vercel.json` sends a permanent 301 from the `/library/index.html` alias to `/library/`, so crawlers do not see two indexable copies of the hub. The file's canonical tag also points at `/library/`.
 - Guide pages are addressed with explicit filenames, e.g. `/library/biblical-stewardship.html`.
-- `vercel.json` only sets headers for `sw.js` and `manifest.webmanifest`; no rewrites are needed for the library.
-- On first load the service worker precaches all seven guides plus both tools, so a reader who has opened the site once can visit the library with no connection.
+- `vercel.json` also sets headers for `sw.js`, `manifest.webmanifest` and `sitemap.xml`. The sitemap at the domain root lists all 11 canonical URLs and is declared in `robots.txt`.
+- On first load the service worker precaches all seven guides plus both tools, so a reader who has opened the site once can visit the library with no connection. The service worker caches `/library/` rather than the aliased filename.
+
+The local `python3 -m http.server` preview does not apply the Vercel 301; on that server both paths still serve the hub. The redirect is a Vercel deployment behaviour, so verify it on the deployed domain (or with `curl -I` against the Vercel preview) after merging.
 
 ## Local preview
 

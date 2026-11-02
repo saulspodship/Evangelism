@@ -1,7 +1,6 @@
-const CACHE_NAME = "sauls-podship-evangelism-v4";
+const CACHE_NAME = "sauls-podship-evangelism-v5";
 const APP_SHELL = [
   "./",
-  "./index.html",
   "./styles.css",
   "./app.js",
   "./i18n.js",
@@ -10,9 +9,9 @@ const APP_SHELL = [
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/icon-maskable-512.png",
+  "./images/og-evangelism.jpg",
   // Field Library — guides, tools, and their assets.
   "./library/",
-  "./library/index.html",
   "./library/library.css",
   "./library/library.js",
   "./library/goal-planner.html",
@@ -76,9 +75,9 @@ self.addEventListener("fetch", (event) => {
           // Send offline visitors to the closest precached page: the field
           // library if they were in it, otherwise the main guide.
           const fallback = url.pathname.includes("/library")
-            ? "./library/index.html"
-            : "./index.html";
-          return (await caches.match(fallback)) || (await caches.match("./index.html")) || Response.error();
+            ? "./library/"
+            : "./";
+          return (await caches.match(fallback)) || (await caches.match("./")) || Response.error();
         }
         return Response.error();
       })
